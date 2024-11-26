@@ -1,5 +1,5 @@
-describe("Signup Test", () => {
-    it("Test valid signup", () => {
-      cy.login()
-    });
+describe("Login Test", () => {
+  it("Test valid login", () => {
+    cy.login();
+  });
 });

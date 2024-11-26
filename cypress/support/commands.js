@@ -35,19 +35,17 @@
 //     }
 //   }
 // }
-Cypress.Commands.add("launch_app",()=>{
-    cy.visit('/')
-    cy.contains('a','Me want it!').click();
-    cy.contains('h1','Welcome to OWASP Juice Shop!').should('be.visible');
-    cy.contains('Dismiss').click()
-})
-Cypress.Commands.add("login",()=>{
-      cy.launch_app();
-      cy.contains("button", "menu").should("be.visible").click();
-      cy.contains("a", " Login ").click({ force: true }, { timeout: 100000 });
-      cy.get('#email').type('veanaamar25@gmail.com');
-      cy.get('#password').type('123456ABC');
-      cy.get('#loginButton').click()
-})
-
-
+Cypress.Commands.add("launch_app", () => {
+  cy.visit("/");
+  cy.contains("a", "Me want it!").click();
+  cy.contains("h1", "Welcome to OWASP Juice Shop!").should("be.visible");
+  cy.contains("Dismiss").click();
+});
+Cypress.Commands.add("login", () => {
+  cy.launch_app();
+  cy.contains("button", "menu").should("be.visible").click();
+  cy.contains("a", " Login ").click({ force: true }, { timeout: 100000 });
+  cy.get("#email").type("veanaamar25@gmail.com");
+  cy.get("#password").type("123456ABC");
+  cy.get("#loginButton").click();
+});
